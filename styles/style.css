@@ -2,4 +2,86 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+header {
+  position: relative;
+  display: grid;
+  grid-template-rows: min-content repeat(3, 1fr);
+  /* grid-template-rows: 1fr min-content 1fr; */
+  justify-items: end;
+  align-items: center;
+  block-size: 100vh;
+  padding: 10px;
+}
+
+header::before {
+  position: absolute;
+  content: "";
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  border-right: 1px solid #FF0070;
+  border-top: 1px solid #FF0070;
+}
+
+.rec {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  gap: 10px;
+  font-size: 18px;
+  top: 10px;
+  right: 18px;
+  color: #FF0070;
+}
+
+.rec::after {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 100%;
+  border: 1px solid #FF0070;
+  box-shadow: 0px 0px 4px 2px #FF0070;
+  background-color: #FF0070;
+}
+
+header::after {
+  position: absolute;
+  content: "";
+  bottom: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-left: 1px solid #FF0070;
+  border-bottom: 1px solid #FF0070;
+}
+
+.header__title {
+  /* inline-size: 100%; */
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: #DB00FF;
+  text-shadow: 4px 4px #FF0070;
+}
+
+.header__text {
+  inline-size: 100%;
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.title_decor {
+  background-color: #FF0070;
+}
+
+.card__title {
+  background-color: #FF0070;
 }
