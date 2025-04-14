@@ -19,9 +19,7 @@ header {
 }
 
 .header__theme-menu {
-  position: absolute;
-  top: 75px;
-  right: 10px;
+  grid-row: 1;
 }
 
 .header__theme-menu-list {
@@ -33,13 +31,13 @@ header {
 .header__theme-menu-button {
   color: var(--nav-color);
   background-color: transparent;
-  border: none;
   line-height: var(--line-height);
   cursor: pointer;
   padding-block: 2px;
   padding-inline: 13px;
   min-height: 26px;
   text-align: center;
+  border: 1px solid transparent;
 }
 
 .header__theme-menu-button:hover {
@@ -51,14 +49,13 @@ header {
 }
 
 .header__theme-menu-button:focus-visible {
-  text-decoration: underline var(--nav-color);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
+  border-bottom: 1px solid currentColor;
   outline: none;
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--nav-color);
+  outline: 1px solid currentColor;
+  pointer-events: none;
 }
 
 .decorated-zone {
@@ -105,10 +102,11 @@ header {
   border-radius: 100%;
   border: var(--decor-border);
   box-shadow: var(--rec-shadow);
-  background-color: var(--accent-color);
+  background-color: currentColor;
 }
 
 .header__title {
+  grid-row: 2;
   font-weight: 700;
   font-size: var(--header-title-size);
   line-height: 82.5%;
@@ -118,6 +116,7 @@ header {
 }
 
 .header__text {
+  grid-row: 3;
   font-weight: bold;
   max-inline-size: 355px;
 }
@@ -173,11 +172,15 @@ header {
 }
 
 .link:hover {
-  border-bottom: 1.5px solid var(--text-color);
+  border-bottom: 1.5px solid currentColor;
 }
 
 .link:focus {
-  outline: 1px solid var(--text-color)
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid currentColor;
 }
 
 .link-decor {
@@ -333,9 +336,8 @@ header {
     min-block-size: 768px;
   }
   .header__theme-menu {
-    top: 20px;
-    left: 50%;
-    margin-left: -115px;
+    justify-self: center;
+    align-self: start;
   }
 
   .header__theme-menu-list {
@@ -383,7 +385,6 @@ header {
 
   .causes-article {
     width: 314.6px;
-    min-height: 328px;
   }
   
   .recommendations {
